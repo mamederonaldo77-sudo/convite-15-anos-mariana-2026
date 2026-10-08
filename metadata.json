@@ -1,0 +1,6 @@
+{
+  "name": "Mariana Amorim - Meus 15 Anos",
+  "description": "Convite oficial e celebração de 15 anos de Mariana Amorim. 13 de Novembro de 2026 no Espaço 277.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+:root {
+  --theme-bg: #0b0813;
+  --theme-accent: #c084fc;
+  --theme-secondary: #e9d5ff;
+  --theme-font-title: 'Cinzel', Georgia, serif;
+  --theme-font-body: 'Montserrat', system-ui, sans-serif;
+  --font-script: 'Great Vibes', cursive;
+}
+
+body {
+  font-family: var(--theme-font-body);
+  background-color: var(--theme-bg);
+  color: #f1f0f7;
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Dynamic font families */
+h1, h2, h3, h4, .font-cinzel, .font-cormorant, .font-title {
+  font-family: var(--theme-font-title);
+}
+
+.font-script {
+  font-family: var(--font-script) !important;
+}
+
+/* Dynamic Silver & Theme Accent typography */
+.silver-text {
+  background: linear-gradient(135deg, #ffffff 0%, var(--theme-secondary) 30%, #ffffff 60%, var(--theme-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.lilac-silver-text {
+  background: linear-gradient(135deg, #ffffff 0%, var(--theme-secondary) 25%, var(--theme-accent) 65%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.silver-border {
+  border-color: color-mix(in srgb, var(--theme-secondary) 25%, transparent);
+}
+
+.silver-glow {
+  box-shadow: 0 0 30px -5px color-mix(in srgb, var(--theme-accent) 35%, transparent);
+}
+
+.silver-card {
+  background: radial-gradient(circle at top left, color-mix(in srgb, var(--theme-secondary) 12%, transparent), color-mix(in srgb, var(--theme-bg) 85%, black));
+  border: 1px solid color-mix(in srgb, var(--theme-accent) 25%, transparent);
+  backdrop-filter: blur(14px);
+  transition: background 0.4s ease, border-color 0.4s ease;
+}
+
+/* Theme buttons, interactive badges and accents */
+.theme-btn-gradient,
+button.bg-gradient-to-r:not(.bg-amber-600),
+a.bg-gradient-to-r:not(.bg-amber-600) {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--theme-accent) 70%, black) 0%, var(--theme-accent) 50%, color-mix(in srgb, var(--theme-secondary) 75%, white) 100%) !important;
+  color: #ffffff !important;
+  border-color: color-mix(in srgb, var(--theme-secondary) 40%, transparent) !important;
+  box-shadow: 0 8px 25px -4px color-mix(in srgb, var(--theme-accent) 45%, transparent);
+  transition: all 0.3s ease;
+}
+
+/* Theme accent text and indicators */
+[data-theme-active="true"] .text-purple-200,
+[data-theme-active="true"] .text-purple-300,
+[data-theme-active="true"] .text-purple-400 {
+  color: var(--theme-secondary);
+}
+
+[data-theme-active="true"] .border-purple-400\/20,
+[data-theme-active="true"] .border-purple-400\/30,
+[data-theme-active="true"] .border-purple-400\/40,
+[data-theme-active="true"] .border-purple-300\/30,
+[data-theme-active="true"] .border-purple-300\/15,
+[data-theme-active="true"] .border-purple-400\/10,
+[data-theme-active="true"] .border-purple-500\/20,
+[data-theme-active="true"] .border-purple-900\/40,
+[data-theme-active="true"] .border-purple-900\/30,
+[data-theme-active="true"] .border-purple-950 {
+  border-color: color-mix(in srgb, var(--theme-accent) 30%, transparent) !important;
+}
+
+[data-theme-active="true"] .bg-purple-950\/60,
+[data-theme-active="true"] .bg-purple-950\/40,
+[data-theme-active="true"] .bg-purple-950\/80,
+[data-theme-active="true"] .bg-purple-900\/60,
+[data-theme-active="true"] .bg-purple-950 {
+  background-color: color-mix(in srgb, var(--theme-bg) 75%, var(--theme-accent) 25%) !important;
+}
+
+[data-theme-active="true"] .shadow-purple-900\/40,
+[data-theme-active="true"] .shadow-purple-900\/50,
+[data-theme-active="true"] .shadow-purple-600\/30,
+[data-theme-active="true"] .shadow-purple-950\/30,
+[data-theme-active="true"] .shadow-purple-950\/80 {
+  box-shadow: 0 10px 30px -5px color-mix(in srgb, var(--theme-accent) 38%, transparent) !important;
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+.animate-float {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+/* Custom delicate scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--theme-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--theme-accent) 40%, transparent);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-accent);
+}
